@@ -57,4 +57,8 @@ module.exports = {
         open: true,
     },
     mode: "development",
+    watch: process.env.NODE_ENV !== 'production' && !process.env.CI,
+    watchOptions: {
+        ignored: /node_modules/,
+    }
 };

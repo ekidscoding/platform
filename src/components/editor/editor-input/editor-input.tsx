@@ -19,8 +19,9 @@ const EditorInput = ({
   setEditorCode = () => undefined,
 }: EditorInputProps) => {
   const changeHandler = useCallback((value?: string) => {
+    console.log('111 code setter', value);
     setEditorCode(value ?? '')
-  }, []);
+  }, [setEditorCode]);
 
   return (
     <div className='editor-input-wrapper'>

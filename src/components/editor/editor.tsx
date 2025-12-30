@@ -1,21 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { usePython } from 'react-py';
 
 import EditorInput from './editor-input';
 import EditorOutput from './editor-output';
+import { DEFAULT_EDITOR_TEXT } from './constants';
 
 const Editor = () => {
-  const [editorCode, setEditorCode] = useState<string>('// Your code here');
+  const [editorCode, setEditorCode] = useState<string>(DEFAULT_EDITOR_TEXT);
   const { runPython, stdout, stderr, isLoading, isRunning, isReady } = usePython();
 
   const executeHandler = useCallback(async () => {
-    console.log('111 editorCode', editorCode);
     await runPython(editorCode);
   }, [editorCode]);
-
-  useEffect(() => {
-    console.log('111 ready', isReady);
-  }, [isReady]);
 
   return (
     <>

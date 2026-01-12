@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -34,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader"],
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
@@ -46,11 +45,6 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./public/index.html",
-        }),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-            reportFilename: 'report.html',
-            openAnalyzer: false,
         }),
     ],
     devServer: {

@@ -11,12 +11,12 @@ import Register from '../pages/auth/register';
 const AppRoutes = () => (
   <Routes>
     <Route path='/' element={<HomePage />} />
-    <Route path='/lessons' element={<LessonsPage />} />
-    <Route path='/courses' element={<CoursesPage />} />
-    <Route path='/courses/course/:id' element={<CoursePage />} />
-    <Route path='/story-mode' element={<StoryModePage />} />
-    <Route path='/login' element={<Login />} />
-    <Route path='/register' element={<Register />} />
+    <Route path='lessons' element={<LessonsPage />} />
+    <Route path='courses' element={<CoursesPage />} />
+    <Route path='courses/:id' element={<CoursePage />} />
+    <Route path='story-mode' element={<StoryModePage />} />
+    <Route path='login' element={<Login />} />
+    <Route path='register' element={<Register />} />
   </Routes>
 );
 

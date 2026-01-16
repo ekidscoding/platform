@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from "react-router";
 import {
   Dialog,
   DialogPanel,
@@ -25,14 +26,14 @@ const Header = () => {
     <header className="bg-gray-900">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link className='-m-1.5 p-1.5' to="/">
             <span className="sr-only">Your Company</span>
             <img
               alt="Logo"
               src="https://ekidscoding.github.io/python-dovidnyk/assets/logo.png"
               className="h-8 w-auto"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -89,17 +90,27 @@ const Header = () => {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <NavLink
+            to='/lessons'
+            className={({ isActive }) =>
+              `text-sm/6 font-semibold ${isActive ? 'text-emerald-400' : 'text-white'}`
+            }
+          >
             Lessons
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          </NavLink>
+          <NavLink
+            to='/story-mode'
+            className={({ isActive }) =>
+              `text-sm/6 font-semibold ${isActive ? 'text-emerald-400' : 'text-white'}`
+            }
+          >
             Story Mode
-          </a>
+          </NavLink>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <Link className='text-sm/6 font-semibold text-white' to="/login">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">

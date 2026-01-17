@@ -1,16 +1,16 @@
 import React from 'react';
 import { PythonProvider } from 'react-py';
 
-import './App.css'
-import Editor from './components/editor';
+import './App.css';
 import Header from './components/header';
+import AppRoutes from './routes/app-routes';
 
 function App() {
 
   return (
     <PythonProvider>
       <Header />
-      <Editor />
+      <AppRoutes />
     </PythonProvider>
   )
 }

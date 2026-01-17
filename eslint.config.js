@@ -30,6 +30,8 @@ export default defineConfig([
         "warn",
         { allowConstantExport: true },
       ],
+      "quotes": [2, "single", { "avoidEscape": true }],
+      "semi": [2, "always"],
     },
   },
 ]).concat(eslintPluginPrettier);

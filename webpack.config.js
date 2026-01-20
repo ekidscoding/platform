@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const RemarkHTML = require("remark-html");
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -39,6 +41,22 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: "asset/resource",
             },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                    },
+                    {
+                        loader: "remark-loader",
+                        options: {
+                            remarkOptions: {
+                                plugins: [RemarkHTML],
+                            },
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [
@@ -46,9 +64,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./public/index.html",
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: "public",
+                    to: ".",
+                    globOptions: {
+                        ignore: ["**/index.html"],
+                    },
+                },
+            ],
+        }),
     ],
     devServer: {
-        static: "./dist",
+        static: "./public",
         hot: true,
         historyApiFallback: true,
         port: 3001,

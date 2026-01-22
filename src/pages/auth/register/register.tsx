@@ -1,6 +1,6 @@
 const Register = () => (
   <div className="container">
-    <h1 className='text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl'>Register page</h1>
+    <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Register page</h1>
   </div>
 );
 

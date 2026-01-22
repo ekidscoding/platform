@@ -1,6 +1,6 @@
 const Course = () => (
   <div className="container">
-    <h1 className='text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl'>Course page</h1>
+    <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Course page</h1>
   </div>
 );
 

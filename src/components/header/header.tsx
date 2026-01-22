@@ -9,6 +9,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 
+import ThemeToggle from '@/components/theme-toggle';
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -61,7 +63,10 @@ const Header = () => {
             Story Mode
           </NavLink>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end align-middle">
+          <div className="mr-2">
+            <ThemeToggle />
+          </div>
           <Link className='text-sm/6 font-semibold text-white' to="/login">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>

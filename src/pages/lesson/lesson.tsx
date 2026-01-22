@@ -1,8 +1,8 @@
-import Lesson from '../../components/lessons/lesson';
+import Lesson from '@/components/lessons/lesson';
 
 const LessonPage = () => (
   <div className="container">
-    <h1 className='text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl'>Lesson page</h1>
+    <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Lesson page</h1>
     <Lesson />
   </div>
 );

@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { usePython } from 'react-py';
 
+import { Button } from '@/components/ui/button';
+
 import EditorInput from './editor-input';
 import EditorOutput from './editor-output';
 import { DEFAULT_EDITOR_TEXT } from './constants';
@@ -16,16 +18,16 @@ const Editor = () => {
   return (
     <>
       <div className="container">
-        <h1 className='text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl'>Editor</h1>
+        <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Editor</h1>
       </div>
       <div className="container-fluid">
         <div className='mb-[15px]'>
-          <button
-            className='rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+          <Button
             onClick={executeHandler}
-            disabled={isLoading || isRunning}>
+            disabled={isLoading || isRunning}
+            type='button'>
             {isLoading ? "Loading..." : (isRunning ? "Executing..." : "Execute")}
-          </button>
+          </Button>
 
         </div>
         <div className='global-wrapper divide-x-4'>

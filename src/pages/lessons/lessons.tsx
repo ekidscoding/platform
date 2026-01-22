@@ -7,7 +7,7 @@ import { lessons } from './constants';
 
 const Lessons = () => (
   <div className="container">
-    <h1 className='text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl mb-10'>Lessons page</h1>
+    <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Lessons page</h1>
     <div className='bg-gray-900 py-10'>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">

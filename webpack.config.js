@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -9,7 +10,7 @@ module.exports = {
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: "",
+        publicPath: process.env.PUBLIC_URL || '/',
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
@@ -78,6 +79,9 @@ module.exports = {
                 },
             ],
         }),
+        new webpack.DefinePlugin({
+            "process.env.PUBLIC_URL": JSON.stringify(process.env.PUBLIC_URL || ''),
+        })
     ],
     devServer: {
         static: "./public",

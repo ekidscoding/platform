@@ -4,9 +4,9 @@ import { Theme } from './types';
 import ThemeProviderContext from './theme-context';
 
 type ThemeProviderProps = {
-  children: React.ReactNode
-  defaultTheme?: Theme
-  storageKey?: string
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+  storageKey?: string;
 };
 
 const ThemeProvider = ({

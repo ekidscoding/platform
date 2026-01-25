@@ -1,23 +1,26 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import Editor from '@/components/editor';
-import { ROUTES } from '@/routes/constants';
 import Markdown from '@/components/markdown';
+import useFetchLesson from '@/hooks/api/use-fetch-lesson';
+import { Spinner } from '@/components/ui/spinner';
 
 const Lesson = () => {
-  const [markdownContent, setMarkdownContent] = useState<string | null>(null);
   const { id } = useParams();
-
-  useEffect(() => {
-    fetch(`${ROUTES.BASE_URL}/lessons/${id}.md`)
-      .then((response) => response.text())
-      .then((text) => setMarkdownContent(text ?? ''));
-  }, [setMarkdownContent]);
+  const { data, error, isFetching, isLoading } = useFetchLesson(id);
+  const isLoadingState = isLoading || isFetching;
 
   return (
     <>
-      <Markdown>{markdownContent}</Markdown>
+      {isLoadingState ? (
+        <>
+          <Spinner /> Loading...
+        </>
+      ) : error ? (
+        <div className='text-destructive'>Error: {error.message}</div>
+      ) : (
+        <Markdown>{data?.data ?? ''}</Markdown>
+      )}
       <Editor />
     </>
   );

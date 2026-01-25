@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { usePython } from 'react-py';
 
 import { Button } from '@/components/ui/button';
+import { Spinner } from '@/components/ui/spinner';
 
 import EditorInput from './editor-input';
 import EditorOutput from './editor-output';
@@ -26,9 +27,18 @@ const Editor = () => {
             onClick={executeHandler}
             disabled={isLoading || isRunning}
             type='button'>
-            {isLoading ? "Loading..." : (isRunning ? "Executing..." : "Execute")}
+            {isLoading
+              ? <>
+                  <Spinner data-icon="inline-start" />
+                  Loading...
+                </>
+              : (isRunning
+                ? <>
+                    <Spinner data-icon="inline-start" />
+                    ...Executing
+                  </>
+                : "Execute")}
           </Button>
-
         </div>
         <div className='global-wrapper divide-x-4'>
           <EditorInput editorCode={editorCode} setEditorCode={setEditorCode} />

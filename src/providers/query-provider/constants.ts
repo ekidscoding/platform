@@ -1,0 +1,5 @@
+export const QUERY_CONFIG = {
+  STALE_TIME: 1000 * 60 * 5,
+  CACHE_TIME: 1000 * 60 * 30,
+  RETRY_QUANTITY: 3,
+};

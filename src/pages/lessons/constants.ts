@@ -1,6 +1,6 @@
 import {
-  CodeBracketSquareIcon,
-} from '@heroicons/react/24/outline';
+    SquareCode,
+} from "lucide-react";
 
 export const lessons = [
   {
@@ -10,6 +10,6 @@ export const lessons = [
     description: 'Навчитись писати прості програми. Перевірити налаштування середовища програмування',
     date: 'Apr 23, 2025',
     datetime: '2025-04-23',
-    icon: CodeBracketSquareIcon
+    icon: SquareCode,
   }
 ];

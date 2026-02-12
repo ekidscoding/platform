@@ -1,8 +1,9 @@
 import Lesson from '@/components/lessons/lesson';
 
+import "./lesson.css";
+
 const LessonPage = () => (
-  <div className="container">
-    <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Lesson page</h1>
+  <div className="container-fluid lesson-container">
     <Lesson />
   </div>
 );

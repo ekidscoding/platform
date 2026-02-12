@@ -31,7 +31,7 @@ const Header = () => {
     );
 
   return (
-    <header className="bg-background sticky top-0 z-50 w-full py-3.5 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
+    <header className="bg-background fixed z-50 w-full py-3.5 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
         <div className="container">
             <div className="flex items-center justify-between">
                 <div className="flex lg:flex-1">

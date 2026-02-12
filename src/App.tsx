@@ -10,16 +10,18 @@ import './App.css';
 
 function App() {
 
-  return (
-    <PythonProvider>
-      <ThemeProvider defaultTheme='light' storageKey='platform-ui-theme'>
-        <QueryProvider>
-          <Header />
-          <AppRoutes />
-        </QueryProvider>
-      </ThemeProvider>
-    </PythonProvider>
-  )
+    return (
+        <PythonProvider>
+          <ThemeProvider defaultTheme='light' storageKey='platform-ui-theme'>
+              <QueryProvider>
+                  <Header />
+                  <main id="main" className="main h-svh">
+                      <AppRoutes />
+                  </main>
+              </QueryProvider>
+          </ThemeProvider>
+        </PythonProvider>
+    )
 }
 
 export default App;

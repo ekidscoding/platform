@@ -9,6 +9,8 @@ import QueryProvider from '@/providers/query-provider';
 
 import './App.css';
 
+const BASENAME = '/platform';
+
 function App() {
     const navigate = useNavigate();
 
@@ -17,8 +19,14 @@ function App() {
         const redirectedFrom = params.get('redirectedFrom');
         if (redirectedFrom) {
             console.info('Redirected from', redirectedFrom);
-            window.history.replaceState({}, '', redirectedFrom);
-            navigate(redirectedFrom, { replace: true });
+            if (redirectedFrom.startsWith(BASENAME)) {
+                const slicedRedirectFrom = redirectedFrom.slice(BASENAME.length) || '/';
+                window.history.replaceState({}, '', BASENAME + slicedRedirectFrom);
+                navigate(slicedRedirectFrom, { replace: true });
+            } else {
+                window.history.replaceState({}, '', BASENAME + redirectedFrom);
+                navigate(redirectedFrom, { replace: true });
+            }
         }
     }, [navigate]);
 

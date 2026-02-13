@@ -8,8 +8,14 @@
     <link rel="icon" href="favicon.ico">
     <script>
         const pathname = window.location.pathname;
-        console.log('111 404 pathname', pathname);
-        window.location.replace('platform?redirectedFrom=' + pathname + window.location.search + window.location.hash);
+        const isBase = pathname === '/platform/' || pathname === '/platform/index.html';
+        const params = new URLSearchParams(window.location.search);
+        const redirectedFrom = params.get('redirectedFrom');
+
+        if (!isBase && !redirectedFrom && pathname.startsWith('/platform/')) {
+            const newUrl = '/platform/?redirectedFrom=' + encodeURIComponent(pathname + window.location.search + window.location.hash);
+            window.location.replace(newUrl);
+        }
     </script>
 </head>
 <body class="bg-background text-foreground">

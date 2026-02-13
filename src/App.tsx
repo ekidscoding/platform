@@ -17,8 +17,8 @@ function App() {
         const redirectedFrom = params.get('redirectedFrom');
         if (redirectedFrom) {
             console.info('Redirected from', redirectedFrom);
-            window.history.replaceState({}, '', redirectedFrom);
-            navigate(redirectedFrom, { replace: true });
+            // window.history.replaceState({}, '', redirectedFrom);
+            // navigate(redirectedFrom, { replace: true });
         }
     }, [navigate]);
 

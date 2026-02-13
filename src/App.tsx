@@ -16,8 +16,9 @@ function App() {
         const params = new URLSearchParams(window.location.search);
         const redirectedFrom = params.get('redirectedFrom');
         if (redirectedFrom) {
-            navigate(redirectedFrom, { replace: true });
             console.info('Redirected from', redirectedFrom);
+            window.history.replaceState({}, '', redirectedFrom);
+            navigate(redirectedFrom, { replace: true });
         }
     }, [navigate]);
 

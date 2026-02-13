@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=/?redirectedFrom=/" />
+    <meta http-equiv="refresh" content="0; url=/platform?redirectedFrom=/" />
     <title>Not found</title>
     <link rel="icon" href="favicon.ico">
     <script>
         const pathname = window.location.pathname;
         console.log('111 404 pathname', pathname);
-        // window.location.replace('platform?redirectedFrom=' + pathname + window.location.search + window.location.hash);
+        window.location.replace('platform?redirectedFrom=' + pathname + window.location.search + window.location.hash);
     </script>
 </head>
 <body class="bg-background text-foreground">

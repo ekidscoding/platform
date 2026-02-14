@@ -25,11 +25,16 @@ const Editor = () => {
         },
     );
 
+    const handleResetCode = () => {
+        setEditorCode(DEFAULT_EDITOR_TEXT);
+    };
+
   return (
     <div className={editorContainerClassList}>
         <EditorInput
             editorCode={editorCode}
             setEditorCode={setEditorCode}
+            handleResetCode={handleResetCode}
             executeHandler={executeHandler}
             isLoading={isLoading}
             isRunning={isRunning} />

@@ -1,34 +1,15 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router";
 import { PythonProvider } from "react-py";
 
 import Header from "@/components/header";
 import AppRoutes from '@/routes/app-routes';
 import ThemeProvider from '@/providers/theme-provider';
 import QueryProvider from '@/providers/query-provider';
+import useRedirect from "@/hooks/use-redirect";
 
 import './App.css';
 
-const BASENAME = '/platform';
-
 function App() {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        const redirectedFrom = params.get('redirectedFrom');
-        if (redirectedFrom) {
-            console.info('Redirected from', redirectedFrom);
-            if (redirectedFrom.startsWith(BASENAME)) {
-                const slicedRedirectFrom = redirectedFrom.slice(BASENAME.length) || '/';
-                window.history.replaceState({}, '', BASENAME + slicedRedirectFrom);
-                navigate(slicedRedirectFrom, { replace: true });
-            } else {
-                window.history.replaceState({}, '', BASENAME + redirectedFrom);
-                navigate(redirectedFrom, { replace: true });
-            }
-        }
-    }, [navigate]);
+    useRedirect();
 
     return (
         <PythonProvider>

@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
-import Editor from "@monaco-editor/react";
-import { ReplyIcon } from "lucide-react";
+import React, { useCallback, useEffect, useState } from "react";
+import Editor, { Monaco } from "@monaco-editor/react";
+import { RefreshCw } from "lucide-react";
 
 import editorOptions from "@/config/monaco-config";
 import useTheme from "@/providers/theme-provider/use-theme";
@@ -33,30 +33,43 @@ const EditorInput = ({
     isLoading = false,
     isRunning = false,
 }: EditorInputProps) => {
+    const [monacoInstance, setMonacoInstance] = useState<Monaco | null>(null);
     const { theme } = useTheme();
     const changeHandler = useCallback((value?: string) => {
         setEditorCode(value ?? '');
     }, [setEditorCode]);
 
+    const handleEditorDidMount = (_editor: any, monaco: Monaco) => {
+        setMonacoInstance(monaco);
+    };
+
+    useEffect(() => {
+        const currentTheme = getEditorTheme(theme);
+        import(`monaco-themes/themes/${currentTheme}.json`).then((data) => {
+            monacoInstance?.editor.defineTheme(currentTheme, data.default || data);
+            monacoInstance?.editor.setTheme(currentTheme);
+        });
+    }, [theme, monacoInstance]);
+
   return (
     <div className="relative mb-10">
         <Editor
             height='70vh'
-            theme={getEditorTheme(theme)}
             options={editorOptions}
             language={language}
             value={editorCode}
-            onChange={changeHandler} />
-        <div className="editor-actions absolute top-full right-0 flex items-center">
+            onChange={changeHandler}
+            onMount={handleEditorDidMount} />
+        <div className="editor-actions absolute top-full right-0 flex w-full items-center justify-end">
             <Tooltip>
                 <TooltipTrigger asChild>
                     <Button
-                        className="mr-1"
+                        className="mr-auto"
                         size="icon"
                         onClick={handleResetCode}
                         disabled={isLoading || isRunning}
                         type='button'>
-                        <ReplyIcon />
+                        <RefreshCw />
                     </Button>
                 </TooltipTrigger>
                 <TooltipContent>

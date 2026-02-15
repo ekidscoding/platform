@@ -94,7 +94,7 @@ const EditorInput = ({
                         : "Execute")}
             </Button>
             <Button
-                className="bg-emerald-800 text-amber-50 hover:text-black"
+                className="bg-emerald-600"
                 disabled={isLoading || isRunning}
                 type='button'>
                 Submit answer

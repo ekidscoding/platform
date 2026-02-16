@@ -58,7 +58,7 @@ const Editor = () => {
             isLoading={isLoading}
             isRunning={isRunning} />
         <EditorOutput output={outputCode} error={outputError} />
-        </div>
+    </div>
     );
 };
 

@@ -12,7 +12,7 @@ const Editor = () => {
     const [editorCode, setEditorCode] = useState<string>(DEFAULT_EDITOR_TEXT);
     const [outputCode, setOutputCode] = useState<string>(DEFAULT_OUTPUT_TEXT);
     const [outputError, setOutputError] = useState<string>(DEFAULT_OUTPUT_ERROR);
-    const { runPython, stdout, stderr, isLoading, isRunning, isReady } = usePython();
+    const { runPython, stdout, stderr, isLoading, isRunning, sendInput, prompt } = usePython();
     const { state } = useSidebar();
 
     const executeHandler = useCallback(async () => {
@@ -41,16 +41,23 @@ const Editor = () => {
         setOutputError(stderr);
     }, [stderr]);
 
-    return (
-        <div className={editorContainerClassList}>
-            <EditorInput
-                editorCode={editorCode}
-                setEditorCode={setEditorCode}
-                handleResetCode={handleResetCode}
-                executeHandler={executeHandler}
-                isLoading={isLoading}
-                isRunning={isRunning} />
-            <EditorOutput output={outputCode} error={outputError} />
+    useEffect(() => {
+        if (prompt) {
+            const promptInput = window.prompt(prompt);
+            sendInput(promptInput ?? '');
+        }
+    }, [prompt]);
+
+  return (
+    <div className={editorContainerClassList}>
+        <EditorInput
+            editorCode={editorCode}
+            setEditorCode={setEditorCode}
+            handleResetCode={handleResetCode}
+            executeHandler={executeHandler}
+            isLoading={isLoading}
+            isRunning={isRunning} />
+        <EditorOutput output={outputCode} error={outputError} />
         </div>
     );
 };

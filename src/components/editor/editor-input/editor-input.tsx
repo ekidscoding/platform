@@ -54,7 +54,7 @@ const EditorInput = ({
   return (
     <div className="relative mb-10">
         <Editor
-            height='70vh'
+            height='70dvh'
             options={editorOptions}
             language={language}
             value={editorCode}

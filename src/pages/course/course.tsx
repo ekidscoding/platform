@@ -1,7 +1,9 @@
-const Course = () => (
+import Course from "@/components/course";
+
+const CoursePage = () => (
   <div className="container">
-    <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>Course page</h1>
+    <Course />
   </div>
 );
 
-export default Course;
+export default CoursePage;

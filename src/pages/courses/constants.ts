@@ -10,7 +10,7 @@ export const courses = [
   {
     id: 1,
     title: 'Programming',
-    href: 'programming',
+    href: '0000-0000-1111',
     description: '',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
@@ -19,7 +19,7 @@ export const courses = [
   {
     id: 2,
     title: 'Variables',
-    href: 'variables',
+    href: '0000-0000-1112',
     description: 'Variables are containers for storing data values',
     date: 'Mar 10, 2020',
     datetime: '2020-03-10',
@@ -28,7 +28,7 @@ export const courses = [
   {
     id: 3,
     title: 'Conditions and Loops',
-    href: 'conditions-and-loops',
+    href: '0000-0000-1113',
     description: 'If Statements, For, While and Nested Loops',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',
@@ -37,7 +37,7 @@ export const courses = [
   {
     id: 4,
     title: 'Functions',
-    href: 'functions',
+    href: '0000-0000-1114',
     description: 'Block of code which only runs when it is called',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',
@@ -46,7 +46,7 @@ export const courses = [
   {
     id: 5,
     title: 'Classes and Objects',
-    href: 'classes-and-objects',
+    href: '0000-0000-1115',
     description: 'Python is an object oriented programming language. Almost everything in Python is an object, with its properties and methods.A Class is like an object constructor, or a "blueprint" for creating objects.',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',

@@ -16,7 +16,7 @@ import {
 type EditorInputProps = {
     code?: string;
     language?: string;
-    editorCode?: string;
+    editorCode?: string | null;
     setEditorCode?: (code: string) => void;
     handleResetCode?: () => void;
     executeHandler?: () => Promise<void>;
@@ -54,10 +54,10 @@ const EditorInput = ({
   return (
     <div className="relative mb-10">
         <Editor
-            height='70dvh'
+            height='60dvh'
             options={editorOptions}
             language={language}
-            value={editorCode}
+            value={editorCode ?? ''}
             onChange={changeHandler}
             onMount={handleEditorDidMount} />
         <div className="editor-actions absolute top-full right-0 flex w-full items-center justify-end">

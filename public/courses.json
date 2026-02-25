@@ -17,6 +17,13 @@
           "title": "Programming Languages",
           "description": "Different types of programming languages.",
           "prevLesson": "0000-1111-1111",
+          "nextLesson": "0000-1111-1113"
+        },
+        {
+          "id": "0000-1111-1113",
+          "title": "Programming Languages",
+          "description": "Best programming languages.",
+          "prevLesson": "0000-1111-1112",
           "nextLesson": ""
         }
       ]

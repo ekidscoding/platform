@@ -1,7 +1,7 @@
 {
   "courses": [
     {
-      "id": "c1",
+      "id": "py01",
       "title": "Programming",
       "description": "Learn the fundamentals of programming, including syntax, logic, and problem-solving techniques. This course is designed for beginners and covers the essential building blocks of coding.",
       "tableOfContents": [
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "id": "0000-0000-1112",
+      "id": "py02",
       "title": "Variables",
       "description": "Understand how to store and manage data in your programs using variables. This course covers variable types, naming conventions, and best practices for data storage.",
       "tableOfContents": [
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "0000-0000-1113",
+      "id": "py03",
       "title": "Conditions and Loops",
       "description": "Master the control flow of your programs with conditional statements and loops. Learn how to make decisions and repeat actions efficiently.",
       "tableOfContents": [
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "0000-0000-1114",
+      "id": "py04",
       "title": "Functions",
       "description": "Discover how to organize your code into reusable blocks with functions. This course covers function definition, arguments, return values, and scope.",
       "tableOfContents": [
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "id": "0000-0000-1115",
+      "id": "py05",
       "title": "Classes and Objects",
       "description": "Dive into object-oriented programming with classes and objects. Learn how to model real-world entities, encapsulate data, and create reusable code structures.",
       "tableOfContents": [

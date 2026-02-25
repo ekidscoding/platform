@@ -64,18 +64,18 @@ const Lesson = () => {
             {(nextLesson || prevLesson) && (
                 <div
                     className="justify-center items-center fixed w-full flex left-0 top-[64px] bg-background shadow-[4px_5px_6px_0px_rgba(0,_0,_0,_0.1)] p-[15px] z-51">
-                    {prevLesson && <Button variant="outline" size="sm">
+                    <Button disabled={!prevLesson} variant="outline" size="sm">
                         <ArrowLeft/>
                         <Link to={`/lessons/${prevLesson}?course=${courseId}`}>
                             Previous Lesson
                         </Link>
-                    </Button>}
-                    {nextLesson && <Button className="pr-auto" variant="outline" size="sm">
+                    </Button>
+                    <Button disabled={!nextLesson} className="pr-auto" variant="outline" size="sm">
                         <Link to={`/lessons/${nextLesson}?course=${courseId}`}>
                             Next Lesson
                         </Link>
                         <ArrowRight/>
-                    </Button>}
+                    </Button>
                 </div>
             )}
         </SidebarProvider>

@@ -18,6 +18,8 @@ const Markdown = ({ children }: MarkdownProps) => (
                 <p className="leading-7 mb-6" {...props} />,
               ul: ({node, ...props}) =>
                 <ul className="my-6 ml-6 list-disc [&>li]:mt-2" {...props} />,
+              ol: ({node, ...props}) =>
+                <ul className="my-6 ml-6 list-decimal [&>li]:mt-2" {...props} />,
               pre: ({node, ...props}) =>
                 <pre className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] my-2.5 font-mono text-sm font-semibold overflow-x-auto" {...props} />,
               a: ({node, ...props}) =>

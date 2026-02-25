@@ -1,20 +1,24 @@
-def area_of_circle(radius):
-    pi = 3.14
-    area = pi * radius * radius
-    return area
+# завдання 1
+# замініть всі слова `variable` на `var`.
+# Використайте багато курсорів або `Ctrl + D`
+
+first_variable = 1
+second_variable = True
+third_variable = "Non-Empty"
+forth_variable = ["This", "is", "the", "list"]
+
+# завдання 2
+# скопіюйте всі 4 рядки без використання `Ctrl + C / Ctrl + V`
+# `Alt + Shift + Down` - але спочатку виділіть 4 рядки
 
 
-sword_length = 1.0
-spear_length = 2.0
 
-# don't touch above this line
+# завдання 3
+# поміняйте місцями 2 та 4, 1 та 3 рядки
 
+# має вийти 
 
-
-# don't touch below this line
-
-print("Sword length:", sword_length, "meters.")
-print("Sword attack area:", sword_area, "square meters")
-
-print("Spear length:", spear_length, "meters.")
-print("Spear attack area:", spear_area, "square meters")
+# third_variable = "Non-Empty"
+# forth_variable = ["This", "is", "the", "list"]
+# first_variable = 1
+# second_variable = True

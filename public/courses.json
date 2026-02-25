@@ -1,29 +1,29 @@
 {
   "courses": [
     {
-      "id": "0000-0000-1111",
+      "id": "c1",
       "title": "Programming",
       "description": "Learn the fundamentals of programming, including syntax, logic, and problem-solving techniques. This course is designed for beginners and covers the essential building blocks of coding.",
       "tableOfContents": [
         {
-          "id": "0000-1111-1111",
+          "id": "e74c2775-6365-4ea1-a167-56c7fc00200a",
           "title": "Introduction to Programming",
           "description": "Overview of programming concepts and history.",
           "prevLesson": "",
-          "nextLesson": "0000-1111-1112"
+          "nextLesson": "84e62c63-1bf5-4f12-980c-cc85cdb86f65"
         },
         {
-          "id": "0000-1111-1112",
+          "id": "84e62c63-1bf5-4f12-980c-cc85cdb86f65",
           "title": "Programming Languages",
           "description": "Different types of programming languages.",
-          "prevLesson": "0000-1111-1111",
-          "nextLesson": "0000-1111-1113"
+          "prevLesson": "e74c2775-6365-4ea1-a167-56c7fc00200a",
+          "nextLesson": "c73cc375-ff96-4d04-b269-1ea87e2c10b4"
         },
         {
-          "id": "0000-1111-1113",
+          "id": "c73cc375-ff96-4d04-b269-1ea87e2c10b4",
           "title": "Programming Languages",
           "description": "Best programming languages.",
-          "prevLesson": "0000-1111-1112",
+          "prevLesson": "84e62c63-1bf5-4f12-980c-cc85cdb86f65",
           "nextLesson": ""
         }
       ]

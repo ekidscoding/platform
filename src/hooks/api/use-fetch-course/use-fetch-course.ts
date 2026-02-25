@@ -8,7 +8,7 @@ import { Courses, Course } from "../types";
 
 const useFetchCourse = (id: string | undefined) => {
     return useQuery({
-        queryKey: ['cource', id],
+        queryKey: ['course', id],
         queryFn: () => {
             const data = axios
                 .get<Courses>(`${ROUTES.BASE_URL}/courses.json`)

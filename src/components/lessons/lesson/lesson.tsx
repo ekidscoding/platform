@@ -63,7 +63,7 @@ const Lesson = () => {
             <Editor codeSample={codeSample?.data} hasNavigation={Boolean(nextLesson || prevLesson)} />
             {(nextLesson || prevLesson) && (
                 <div
-                    className="content-center fixed w-full flex justify-between left-0 top-[64px] bg-background shadow-[4px_5px_6px_0px_rgba(0,_0,_0,_0.1)] p-[15px] z-51">
+                    className="content-center fixed w-full flex left-0 top-[64px] bg-background shadow-[4px_5px_6px_0px_rgba(0,_0,_0,_0.1)] p-[15px] z-51">
                     {prevLesson && <Button variant="outline" size="sm">
                         <ArrowLeft/>
                         <Link to={`/lessons/${prevLesson}?course=${courseId}`}>
